@@ -11,8 +11,8 @@ import { db } from "../firebase";
 import { collection, addDoc } from "@firebase/firestore";
 import getOtherEmail from "../utils/getOtherEmails";
 import { useRouter } from "next/router";
-
-
+import { BigHead } from "@bigheads/core";
+import { getRandomOptions } from "../utils/bigHeads";
 
 export default function Sidebar() {
   const [user] = useAuthState(auth);
@@ -47,7 +47,6 @@ export default function Sidebar() {
           _hover={{ bg: "gray.100", cursor: "pointer" }}
           onClick={() => redirect(chat.id)}
         >
-          <Avatar src="" marginEnd={3} />
           <Text>{getOtherEmail(chat.users, user)}</Text>
         </Flex>
       ));

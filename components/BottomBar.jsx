@@ -12,7 +12,7 @@ const BottomBar = ({ id, user }) => {
             text: input,
             sender: user.email,
             timestamp: serverTimestamp(),
-        });
+        })
         setInput("");
 
     };

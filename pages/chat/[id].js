@@ -11,12 +11,14 @@ import getOtherEmail from "../../utils/getOtherEmails";
 import { useAuthState } from "react-firebase-hooks/auth";
 import BottomBar from '../../components/bottomBar';
 
+
 export default function Chat() {
     const router = useRouter();
     const { id } = router.query;
     const [user] = useAuthState(auth);
-    const q = query(collection(db, 'chats/${id}/messages'), orderBy("timestamp"));
+    const q = query(collection(db, `chats/${id}/messages`), orderBy("timestamp"));
     const [messages] = useCollectionData(q);
+    console.log(messages);
     const [chat] = useDocumentData(doc(db, "chats", id));
     const bottomOfChat = useRef();
     const getMessages = () =>
@@ -24,7 +26,7 @@ export default function Chat() {
             const sender = msg.sender === user.email;
 
             return (
-                <Flex key={Math.random()} p={3} bg={sender ? "green.200" : "blue.200"} alignSelf={sender ? "flex-end" : "flex-start"}>
+                <Flex key={Math.random()} p={3} minWidth={20} bg={sender ? "green.200" : "blue.200"} alignSelf={sender ? "flex-end" : "flex-start"}>
                     <Text w="fit-content" minWidth="100px" p={3} m={1} borderRadius="10px">{msg.text}</Text>
                 </Flex>
 
@@ -39,6 +41,7 @@ export default function Chat() {
             }), 100);
     }
         , [messages]);
+
     return (
         <>
             <Flex h="100vh">
@@ -49,7 +52,7 @@ export default function Chat() {
                 </Head>
                 <Sidebar />
 
-                <Flex bg="pink.400" flex={1} direction="column">
+                <Flex  flex={1} direction="column">
                     <TopBar email={getOtherEmail(chat?.users, user)} />
                     <Flex flex={1} overflowX="scroll" sx={{ scrollbarWidth: "none" }} direction="column">
                         {getMessages()}
