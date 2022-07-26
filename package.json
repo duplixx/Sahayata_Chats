@@ -26,5 +26,9 @@
     "eslint-config-next": "12.2.3",
     "postcss": "^8.4.14",
     "tailwindcss": "^3.1.6"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/duplixx/Sahayata_Chats.git",
+  "author": "duplix <duplixxx20@gmail.com>",
+  "license": "MIT"
 }
