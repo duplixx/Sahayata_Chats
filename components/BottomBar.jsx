@@ -17,8 +17,8 @@ const BottomBar = ({ id, user }) => {
 
     };
     return (
-        <FormControl bg="gray.200" p={3} onSubmit={sendMessage} as="form">
-            <Input type="text" placeholder="type something" autoComplete="off" onChange={e => setInput(e.target.value)} value={input} />
+        <FormControl bg="blue.200" p={3} onSubmit={sendMessage} as="form" >
+            <Input type="text" bg="blue.500" placeholder="type something..." autoComplete="off" borderColor="black" borderWidth={2} onChange={e => setInput(e.target.value)} value={input} />
             <Button type="submit" hidden >Submit</Button>
         </FormControl>
     );

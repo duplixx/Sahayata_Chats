@@ -18,7 +18,7 @@ export default function Login() {
       <Head>
         <title>Login</title>
       </Head>
-      <Box w="100%" bgGradient='linear(to-r, pink.200, indigo.100)'>
+      <Box w="100%" bgGradient='linear(to-l, pink.400, indigo.100)'>
         <Center h="100vh" >
           <Stack
             align="center"

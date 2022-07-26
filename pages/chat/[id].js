@@ -26,8 +26,8 @@ export default function Chat() {
             const sender = msg.sender === user.email;
 
             return (
-                <Flex key={Math.random()} p={3} minWidth={20} bg={sender ? "green.200" : "blue.200"} alignSelf={sender ? "flex-end" : "flex-start"}>
-                    <Text w="fit-content" minWidth="100px" p={3} m={1} borderRadius="10px">{msg.text}</Text>
+                <Flex key={Math.random()} p={1} m={2} borderRadius={5} bg={sender ? "green.200" : "blue.200"} alignSelf={sender ? "flex-end" : "flex-start"} >
+                    <Text w="fit-content" minWidth="10px" p={1} m={1} >{msg.text}</Text>
                 </Flex>
 
             );
@@ -38,7 +38,7 @@ export default function Chat() {
             bottomOfChat.current.scrollIntoView({
                 behavior: "smooth",
                 block: 'start',
-            }), 100);
+            }), 50);
     }
         , [messages]);
 
@@ -54,7 +54,7 @@ export default function Chat() {
 
                 <Flex  flex={1} direction="column">
                     <TopBar email={getOtherEmail(chat?.users, user)} />
-                    <Flex flex={1} overflowX="scroll" sx={{ scrollbarWidth: "none" }} direction="column">
+                    <Flex flex={1} p={2} overflowX="scroll" sx={{ scrollbarWidth: "none" }} direction="column">
                         {getMessages()}
                         <div ref={bottomOfChat}></div>
                     </Flex>

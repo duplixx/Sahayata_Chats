@@ -13,6 +13,17 @@ import getOtherEmail from "../utils/getOtherEmails";
 import { useRouter } from "next/router";
 import { BigHead } from "@bigheads/core";
 import { getRandomOptions } from "../utils/bigHeads";
+import {useState,useDisclosure} from 'react';
+import { Tooltip } from '@chakra-ui/react'
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+} from '@chakra-ui/react'
 
 export default function Sidebar() {
   const [user] = useAuthState(auth);
@@ -30,6 +41,7 @@ export default function Sidebar() {
 
 
   const newChat = async () => {
+    
     const input = prompt("Enter email of chat recipient");
     if (!chatExists(input) && input != user.email) {
       await addDoc(collection(db, "chats"), { users: [user.email, input] });
@@ -65,7 +77,6 @@ export default function Sidebar() {
         direction="column"
       >
         <Flex
-          bg="red.100"
           h="81px"
           w="100%"
           align="center"
@@ -84,9 +95,11 @@ export default function Sidebar() {
             onClick={() => signOut(auth)}
           />
         </Flex>
-        <Button m={5} p={4} onClick={() => newChat()}>
-          New Chat
-        </Button>
+        <Tooltip label="New chat" placement="right">
+          <Button m={5} p={4} onClick={() => newChat()}>
+            New Chat
+          </Button>
+        </Tooltip>
         <Flex
           overflowX="scroll"
           direction="column"
