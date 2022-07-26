@@ -4,7 +4,7 @@ import { serverTimestamp, addDoc, collection } from "firebase/firestore";
 import { db } from "../firebase";
 import { useState } from "react";
 
-const BottomBar = ({ user }) => {
+const BottomBar = ({ id, user }) => {
     const [input, setInput] = useState('');
     const sendMessage = async (e) => {
         e.preventDefault();
@@ -22,5 +22,8 @@ const BottomBar = ({ user }) => {
             <Button type="submit" hidden >Submit</Button>
         </FormControl>
     );
+
 };
-export default BottomBar();
+
+export default BottomBar;
+

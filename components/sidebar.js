@@ -14,7 +14,7 @@ import { useRouter } from "next/router";
 
 
 
-export default function sidebar() {
+export default function Sidebar() {
   const [user] = useAuthState(auth);
   const [snapshot, loading, error] = useCollection(collection(db, "chats"));
   const chats = snapshot?.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
