@@ -1,6 +1,6 @@
 // pages/_app.js
 import { Box, Center, ChakraProvider, Flex, Spinner } from "@chakra-ui/react";
-import Login from "../components/login";
+import Login from "../components/Login";
 import { auth } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 

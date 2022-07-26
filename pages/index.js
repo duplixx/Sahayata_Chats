@@ -1,6 +1,6 @@
-import Head from 'next/head'
-import Sidebar from '../components/sidebar'
-import { Box } from '@chakra-ui/react'
+import Head from 'next/head';
+import Sidebar from '../components/Sidebar';
+import { Box } from '@chakra-ui/react';
 
 export default function Home() {
   return (
@@ -11,10 +11,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box h="100vh">
-        <Sidebar/>
+        <Sidebar />
       </Box>
-      
+
 
     </div>
-  )
+  );
 }
