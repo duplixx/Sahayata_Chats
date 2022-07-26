@@ -15,22 +15,22 @@ function MyApp({ Component, pageProps }) {
       </ChakraProvider>
     );
   }
-  if (user) {
+  if (!user) {
     return (
       <ChakraProvider>
-        
-          <Login />
-    
-        
+
+        <Login />
+
+
       </ChakraProvider>
     );
   }
-  // return (
-  //   <ChakraProvider>
-  //     <Component {...pageProps} />
-  //   </ChakraProvider>
+  return (
+    <ChakraProvider>
+      <Component {...pageProps} />
+    </ChakraProvider>
 
-  // )
+  );
 }
 
 export default MyApp;
