@@ -46,7 +46,10 @@ export default function Sidebar() {
           align="center"
           _hover={{ bg: "gray.100", cursor: "pointer" }}
           onClick={() => redirect(chat.id)}
-        >
+        > 
+          <div style={{ width: "60px" }}>
+            <BigHead {...getRandomOptions()} />
+          </div>
           <Text>{getOtherEmail(chat.users, user)}</Text>
         </Flex>
       ));
