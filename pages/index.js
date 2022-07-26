@@ -13,8 +13,6 @@ export default function Home() {
       <Box h="100vh">
         <Sidebar />
       </Box>
-
-
     </div>
   );
 }

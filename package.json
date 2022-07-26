@@ -1,5 +1,5 @@
 {
-  "name": "sahayta_chats",
+  "name": "emergency",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -22,12 +22,8 @@
     "react-icons": "^4.4.0"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.7",
     "eslint": "8.20.0",
-    "eslint-config-next": "12.2.3",
-    "faker": "^6.6.6",
-    "postcss": "^8.4.14",
-    "tailwindcss": "^3.1.6"
+    "eslint-config-next": "12.2.3"
   },
   "main": "index.js",
   "repository": "https://github.com/duplixx/Sahayata_Chats.git",
