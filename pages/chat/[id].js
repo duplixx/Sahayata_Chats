@@ -18,7 +18,6 @@ export default function Chat() {
     const [user] = useAuthState(auth);
     const q = query(collection(db, `chats/${id}/messages`), orderBy("timestamp"));
     const [messages] = useCollectionData(q);
-    console.log(messages);
     const [chat] = useDocumentData(doc(db, "chats", id));
     const bottomOfChat = useRef();
     const getMessages = () =>
